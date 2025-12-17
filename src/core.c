@@ -4,6 +4,7 @@
 #include "core.h"
 
 #include "box2d/math_functions.h"
+#include "constants.h"
 
 #if defined( B2_COMPILER_MSVC )
 #define _CRTDBG_MAP_ALLOC
@@ -74,7 +75,7 @@ static void b2DefaultLogFcn( const char* message )
 	printf( "Box2D: %s\n", message );
 }
 
-b2LogFcn* b2LogHandler = b2DefaultLogFcn;
+static b2LogFcn* b2LogHandler = b2DefaultLogFcn;
 
 void b2SetLogFcn( b2LogFcn* logFcn )
 {
